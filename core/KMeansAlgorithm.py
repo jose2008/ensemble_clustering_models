@@ -1,5 +1,5 @@
 from sklearn.cluster import KMeans
-from IClusteringAlgorithm import *
+from clustering_viz.clustering.core.IClusteringAlgorithm import *
 from sklearn import datasets
 
 
@@ -16,15 +16,9 @@ class KMeansAlgorithm ( IClusteringAlgorithm ) :
 
 
 	def _runAlgorithm( self ) :
-		# define here your algorithm ...
-		# and update your labels
-
-		#iris = datasets.load_iris()
 		kmean = KMeans(n_clusters= self.params['kmeans'])
 		kmean.fit(self.m_data)
 		self.m_resultLabels = kmean.labels_
-		print(kmean.labels_)
-		print(self.m_resultMetrics)
 		pass
 
 #test = KMeansAlgorithm([1,2,3], {'a':'b'})

@@ -1,10 +1,12 @@
 #CCI #: 00221513745718003027
 import numpy as np
 from sklearn.metrics import silhouette_score
-from clusteringMetric import *
+#from clusteringMetric import *
 from sklearn.decomposition import PCA as sklearnPCA
 from sklearn.preprocessing import StandardScaler
 import numpy as np
+from clustering_viz.clustering.core.clusteringMetric import *
+
 
 
 class IClusteringAlgorithm ( object ) :
