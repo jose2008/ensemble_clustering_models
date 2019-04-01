@@ -18,7 +18,7 @@ from sklearn.cluster import KMeans
 from ensemble_clustering_models.core  import IClusteringAlgorithm as ls
 
 
-iris = datasets.load_iris()
+#iris = datasets.load_iris()
 #kmean = KMeans(n_clusters=3)
 #kmean.fit(iris.data)
 #self.m_resultLabels = kmean.labels_
@@ -29,10 +29,10 @@ sys.path.append('../')
 
 
 
-test = KMeansAlgorithm(iris, {'a':'b'} )
+#test = KMeansAlgorithm(iris, {'a':'b'} )
 
 
-test._runAlgorithm()
+#test._runAlgorithm()
 
 
 

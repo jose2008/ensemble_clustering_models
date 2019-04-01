@@ -1,7 +1,9 @@
 from sklearn.cluster import KMeans
-from IClusteringAlgorithm import *
+#from IClusteringAlgorithm import *
+from clustering_viz.clustering.core.IClusteringAlgorithm import *
 from sklearn import datasets
-import somLib
+import clustering_viz.clustering.core.somLib as somLib
+#import somLib
 import pandas as pd
 
 
@@ -21,9 +23,14 @@ class SomAlgorithm ( IClusteringAlgorithm ) :
 		# and update your labels
 		# ...
 
-		iris = self.m_data
-		df_train = pd.DataFrame( self.m_data.data, columns=iris.feature_names)
-		agri_som = somLib.SOM(self.params['som_a'] , self.params['som_b'] ,4)
+		#iris = self.m_data
+		#iris = datasets.load_iris()
+		df_train = pd.DataFrame( self.m_data)
+		#df_train = self.m_data
+		print("valuesssssssssssssssssssssss")
+		print(df_train)
+		#df_train = pd.DataFrame( self.m_data.data, columns=iris.feature_names)
+		agri_som = somLib.SOM(self.params['som_a'] , self.params['som_b'] ,len(df_train.columns))
 		df_train = df_train / df_train.max()
 		agri_som.train(df_train.values,
 	              num_epochs=200,

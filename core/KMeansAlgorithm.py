@@ -16,6 +16,7 @@ class KMeansAlgorithm ( IClusteringAlgorithm ) :
 
 
 	def _runAlgorithm( self ) :
+		#kmean = KMeans(n_clusters= self.params['kmeans'], init="random", n_init=1)
 		kmean = KMeans(n_clusters= self.params['kmeans'])
 		kmean.fit(self.m_data)
 		self.m_resultLabels = kmean.labels_

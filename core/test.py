@@ -9,10 +9,10 @@ import numpy as np
 
 
 #iris = datasets.load_breast_cancer()
-iris = datasets.load_iris()
-test = KMeansAlgorithm(iris.data, {'kmeans':2} )
-test.run()
-print(test.getResultsMetrics())
+#iris = datasets.load_iris()
+#test = KMeansAlgorithm(iris.data, {'kmeans':2} )
+#test.run()
+#print(test.getResultsMetrics())
 
 '''
 sklearn_pca = sklearnPCA(n_components=2)
@@ -66,6 +66,10 @@ print(tolist_knn)
 
 #cuts, parts = metis.part_graph(list_ad, 3, recursive = False, dbglvl=metis.METIS_DBG_ALL)
 
+
+
+#change to another dataset.
+#path('models/model_clustering', models.model_clustering, name='model_clustering'),
 
 
 
