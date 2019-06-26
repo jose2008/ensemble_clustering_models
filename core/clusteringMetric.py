@@ -24,8 +24,13 @@ def centroid(s):
 	return c
 
 
-def silhouette_metric(data, label):                                                                 
-	return silhouette_score( data, label , metric='euclidean', sample_size=None, random_state=None )
+def silhouette_metric(data, label):
+	print("metrics.....")   
+	s = silhouette_score( data, label , metric='euclidean', sample_size=None, random_state=None )
+	print("silueta")
+	print(s)
+	if s<0: return 0.05                                                          
+	return s# silhouette_score( data, label , metric='euclidean', sample_size=None, random_state=None )
 
 
 def Sum_Squared_Within(data, label):
@@ -59,9 +64,12 @@ def Sum_Squared_Within(data, label):
 			
 		norm.append(sse)
 	array_norm = []
+	#print("testing error SOM")
+	#print(len(norm))
+	#print(len(dict_cluster.keys()))
 	for i in dict_cluster.keys():
 		array_norm.append( (norm[i]-min(norm))/(max(norm)-min(norm))   )
-	return sum(array_norm)/len(array_norm)
+	return 1 - sum(array_norm)/len(array_norm)
 	#return sse
 
 '''
@@ -101,8 +109,8 @@ def Sum_Squared_Between(data, label):
 		ssb = ssb + len(dict_cluster[i])*(distance(dict_cent[i], x_med)**2)
 		norm.append(ssb)
 	array_norm = []
-	print(max(norm))
-	print(min(norm))
+	#print(max(norm))
+	#print(min(norm))
 	for i in dict_cluster.keys():
 		array_norm.append( (norm[i]-min(norm))/(max(norm)-min(norm))   )
 	return sum(array_norm)/len(array_norm)

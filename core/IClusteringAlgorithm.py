@@ -1,6 +1,6 @@
 #CCI #: 00221513745718003027
 import numpy as np
-from sklearn.metrics import silhouette_score
+#from sklearn.metrics import silhouette_score
 #from clusteringMetric import *
 from sklearn.decomposition import PCA as sklearnPCA
 from sklearn.preprocessing import StandardScaler
@@ -47,7 +47,7 @@ class IClusteringAlgorithm ( object ) :
 
 		#print( Sum_Squared_Within(self.m_data.data, self.m_resultLabels ) )
 
-		self.m_resultMetrics['silhouette_score']    = silhouette_score(   self.m_data.data,   self.m_resultLabels , metric='euclidean', sample_size=None, random_state=None )
+		self.m_resultMetrics['silhouette_score']    = silhouette_metric(   self.m_data.data,   self.m_resultLabels  )
 		self.m_resultMetrics['Sum_Squared_Within']  = Sum_Squared_Within( self.m_data.data,   self.m_resultLabels)
 		self.m_resultMetrics['Sum_Squared_Between'] = Sum_Squared_Between(self.m_data.data,   self.m_resultLabels)
 

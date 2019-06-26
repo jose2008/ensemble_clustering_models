@@ -17,7 +17,7 @@ class DBScanAlgorithm ( IClusteringAlgorithm ) :
 
 	def _runAlgorithm( self ) :
 
-		db = DBSCAN(eps=0.3, min_samples=10, metric='euclidean').fit(self.m_data)
+		db = DBSCAN(eps=1, min_samples=6, metric='euclidean').fit(self.m_data)
 		core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 		core_samples_mask[db.core_sample_indices_] = True
 		#labels = db.labels_
